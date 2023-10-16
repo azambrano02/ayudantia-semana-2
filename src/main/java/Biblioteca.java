@@ -17,10 +17,13 @@ public class Biblioteca {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    public void setLibros(List<Libro> libros) {this.libros = libros}
     public String getNombreBiblioteca(){
         return nombreBiblioteca;
     }
     public String getDireccion(){
         return direccion;
     }
+
+    public List<Libro> getLibros() {return libros;}
 }
