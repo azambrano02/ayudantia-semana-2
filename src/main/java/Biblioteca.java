@@ -36,9 +36,8 @@ public class Biblioteca {
         return libros;
     }
 
-    public boolean agregarLibro(String nombre, String autor, String editorial, String ISBN) {
-        if (buscarLibro(nombre, autor, editorial, ISBN) == null) {
-            Libro libro = new Libro(nombre, autor, editorial, ISBN);
+    public boolean agregarLibro(Libro libro) {
+        if (!libroExiste(libro)) {
             this.libros.add(libro);
             return true;
         } else {
@@ -46,12 +45,13 @@ public class Biblioteca {
         }
     }
 
-    public Libro buscarLibro(String nombre, String autor, String editorial, String ISBN) {
+    public Libro buscarLibro(String nombre) {
         for (Libro libro : this.libros) {
-            if (libro.getISBN().equals(ISBN) && libro.getNombre().equals(nombre) && libro.getAutor().equals(autor) && libro.getEditorial().equals(editorial)) {
+            if (libro.getNombre().equals(nombre)) {
                 return libro;
             }
         }
+
         return null;
     }
 
@@ -63,13 +63,13 @@ public class Biblioteca {
         }
         return librosAutor;
     }
-    public boolean libroExiste(String nombre, String autor, String editorial, String ISBN){
-        if (buscarLibro(nombre, autor, editorial, ISBN) == null){
-            System.out.println("EL libro no existe en la biblioteca");
+    public boolean libroExiste(Libro libro){
+        for(Libro l : this.libros) {
+            if(libro.getISBN().equals(l.getISBN())) {
+                return true;
+            }
         }
-        else{
-            System.out.println("El libro se encuentra en la biblioteca");
-        }
-        return true;
+
+        return false;
     }
 }
