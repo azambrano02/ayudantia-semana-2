@@ -3,10 +3,13 @@ class Libro {
     private String autor;
     private String editorial;
 
-    public Libro(String nombre, String autor, String editorial){
+    private int ISBN;
+
+    public Libro(String nombre, String autor, String editorial, int ISBN) {
         this.nombre = nombre;
         this.autor = autor;
         this.editorial = editorial;
+        this. ISBN = ISBN;
     }
     public void setNombre(String nombre){
         this.nombre = nombre;
@@ -17,6 +20,8 @@ class Libro {
     public void setEditorial(String editorial){
         this.editorial = editorial;
     }
+    public void setISBN(int ISBN) {this.ISBN = ISBN;}
+
     public String getNombre() {
         return nombre;
     }
@@ -26,4 +31,5 @@ class Libro {
     public String getEditorial() {
         return editorial;
     }
+    public int getISBN() { return ISBN;}
 }
