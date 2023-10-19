@@ -32,4 +32,9 @@ class Libro {
         return editorial;
     }
     public String getISBN() { return ISBN;}
+
+    public String toString() {
+        return "Nombre: " + nombre + " \n Autor:" + autor + "\n Editorial: " + editorial;
+    }
+
 }
