@@ -7,7 +7,6 @@ public class Biblioteca {
     private String direccion;
     private List<Prestamo> prestamos;
     private List<Usuario> usuarios;
-
     private List<Bibliotecario> bibliotecarios;
 
     public Biblioteca(String nombreBiblioteca, String direccion) {
@@ -88,7 +87,9 @@ public class Biblioteca {
         return false;
     }
 
-    public List<Prestamo> generarPrestamo(Prestamo){
-        return new ArrayList<Prestamo>;
-    }
+    public void generarPrestamo(List<Libro> libros, Usuario usuario) {
+       if (libroExiste((Libro) libros)){
+           // se genera el prestamo
+       }
+    } else //no pasa nada
 }
