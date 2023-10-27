@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Biblioteca {
@@ -86,10 +87,20 @@ public class Biblioteca {
 
         return false;
     }
-
-    public void generarPrestamo(List<Libro> libros, Usuario usuario) {
-       if (libroExiste((Libro) libros)){
-           // se genera el prestamo
-       }
-    } else //no pasa nada
+    public void generarPrestamo(Bibliotecario bibliotecario, Usuario usuario, Libro libro, Date fechaInicio, Date fechaFin) {
+        if (!libroExiste(libro)) {
+            System.out.println("El libro no existe en la biblioteca.");
+            return;
+        }
+        for (Prestamo prestamo : prestamos) {
+            if (prestamo.getLibro().equals(libro)) {
+                System.out.println("El libro ya está prestado.");
+                return;
+            }
+        }
+        Prestamo nuevoPrestamo = new Prestamo(bibliotecario, usuario, libro, fechaInicio, fechaFin);
+        prestamos.add(nuevoPrestamo);
+    }
 }
+
+
