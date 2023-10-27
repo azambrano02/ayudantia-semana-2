@@ -87,7 +87,7 @@ public class Biblioteca {
 
         return false;
     }
-    public void generarPrestamo(Bibliotecario bibliotecario, Usuario usuario, Libro libro, Date fechaInicio, Date fechaFin) {
+    public void generarPrestamo(Bibliotecario bibliotecario, Usuario usuario, Libro libro, Date fechaInicio, Date fechaTermino) {
         if (!libroExiste(libro)) {
             System.out.println("El libro no existe en la biblioteca.");
             return;
@@ -98,7 +98,7 @@ public class Biblioteca {
                 return;
             }
         }
-        Prestamo nuevoPrestamo = new Prestamo(bibliotecario, usuario, libro, fechaInicio, fechaFin);
+        Prestamo nuevoPrestamo = new Prestamo(bibliotecario, usuario, libro, fechaInicio, fechaTermino);
         prestamos.add(nuevoPrestamo);
     }
 }
