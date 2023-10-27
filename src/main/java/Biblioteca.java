@@ -5,36 +5,50 @@ public class Biblioteca {
     private List<Libro> libros;
     private String nombreBiblioteca;
     private String direccion;
+    private List<Prestamo> prestamos;
+    private List<Usuario> usuarios;
+    private List<Bibliotecario> bibliotecarios;
 
     public Biblioteca(String nombreBiblioteca, String direccion) {
         this.nombreBiblioteca = nombreBiblioteca;
         this.direccion = direccion;
         this.libros = new ArrayList<>();
+        this.prestamos = new ArrayList<>();
+        this.usuarios = new ArrayList<>();
+        this.bibliotecarios = new ArrayList<>();
     }
 
     public void setNombreBiblioteca(String nombreBiblioteca) {
         this.nombreBiblioteca = nombreBiblioteca;
     }
-
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
     public void setLibros(List<Libro> libros) {
         this.libros = libros;
+    }
+    public void setPrestamos(List<Prestamo> prestamos) {
+        this.prestamos = prestamos;
+    }
+    public void setUsuarios(List<Usuario> usuarios){
+        this.usuarios = usuarios;
+    }
+    public void setBibliotecarios(List<Bibliotecario> bibliotecarios){
+        this.bibliotecarios = bibliotecarios;
     }
 
     public String getNombreBiblioteca() {
         return nombreBiblioteca;
     }
-
     public String getDireccion() {
         return direccion;
     }
-
     public List<Libro> getLibros() {
         return libros;
     }
+    public List<Prestamo> getPrestamos() { return prestamos; }
+    public List<Usuario> getUsuarios() {return usuarios; }
+    public List<Bibliotecario> getBibliotecarios() { return bibliotecarios; }
 
     public boolean agregarLibro(Libro libro) {
         if (!libroExiste(libro)) {
@@ -72,4 +86,10 @@ public class Biblioteca {
 
         return false;
     }
+
+    public void generarPrestamo(List<Libro> libros, Usuario usuario) {
+       if (libroExiste((Libro) libros)){
+           // se genera el prestamo
+       }
+    } else //no pasa nada
 }

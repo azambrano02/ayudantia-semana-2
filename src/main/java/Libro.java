@@ -2,7 +2,6 @@ class Libro {
     private String nombre;
     private String autor;
     private String editorial;
-
     private String ISBN;
 
     public Libro(String nombre, String autor, String editorial, String ISBN) {
@@ -11,6 +10,7 @@ class Libro {
         this.editorial = editorial;
         this.ISBN = ISBN;
     }
+
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
