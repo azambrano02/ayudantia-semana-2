@@ -1,4 +1,6 @@
-class Usuario {
+package modelo;
+
+public class Usuario {
     private String nombre;
     private String rut;
     private String numeroTelefonico;
@@ -27,6 +29,10 @@ class Usuario {
     }
     public String getNumeroTelefonico(){
         return numeroTelefonico;
+    }
+
+    public String toString() {
+        return  nombre+rut+numeroTelefonico;
     }
 
 }

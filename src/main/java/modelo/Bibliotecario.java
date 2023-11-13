@@ -1,4 +1,6 @@
-class Bibliotecario {
+package modelo;
+
+public class Bibliotecario {
     private String nombre;
     private String rut;
     private String direccion;
@@ -35,5 +37,8 @@ class Bibliotecario {
     }
     public String getId(){
         return id;
+    }
+    public String toString() {
+        return  nombre+rut+direccion+id;
     }
 }

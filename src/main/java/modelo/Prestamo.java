@@ -1,6 +1,8 @@
+package modelo;
+
 import java.util.Date;
 
-class Prestamo {
+public class Prestamo {
     Bibliotecario bibliotecario;
     Usuario usuario;
     Libro libro;
