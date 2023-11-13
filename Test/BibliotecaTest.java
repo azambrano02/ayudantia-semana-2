@@ -15,7 +15,7 @@ public class BibliotecaTest {
 
     @BeforeEach
     public void setUp() {
-        biblioteca = new Biblioteca("Biblioteca Test", "Dirección Test");
+        biblioteca = new Biblioteca("modelo.Biblioteca Test", "Dirección Test");
         libro1 = new Libro("Libro 1", "Autor 1", "Editorial 1", "ISBN1");
         libro2 = new Libro("Libro 2", "Autor 2", "Editorial 2", "ISBN2");
         bibliotecario = new Bibliotecario("Bibliotecario Test", "RUT123", "Dirección Biblio", "ID123");

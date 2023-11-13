@@ -1,4 +1,6 @@
-class Libro {
+package modelo;
+
+public class Libro {
     private String nombre;
     private String autor;
     private String editorial;
@@ -34,7 +36,7 @@ class Libro {
     public String getISBN() { return ISBN;}
 
     public String toString() {
-        return "Nombre: " + nombre + " \n Autor:" + autor + "\n Editorial: " + editorial;
+        return  nombre+autor+editorial+ISBN;
     }
 
 }
