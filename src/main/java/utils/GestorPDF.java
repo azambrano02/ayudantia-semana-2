@@ -8,7 +8,7 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import java.io.IOException;
 import java.util.Date;
 public class GestorPDF {
-    public void generarBoleta(Prestamo prestamo) throws IOException {
+    public void generarPrestamo(Prestamo prestamo) throws IOException {
 //Se crea un nuevo documento
         PDDocument documento = new PDDocument();
 //Al documento se le crea y agrega una nueva página, en este caso en formato A6
@@ -19,19 +19,18 @@ public class GestorPDF {
         this.rellenarPDF(documento,pagina,lineasPdf);
 //Se guarda el documento en la ubicación descrita
         documento.save(this.generarNombrePdf(prestamo.getFechaInicio()));
-        documento.save(this.generarNombrePdf(prestamo.getFechaTermino()));
         documento.close();
     }
-    public void rellenarPDF(PDDocument documento, PDPage pagina, String[] lineasVenta){
+    public void rellenarPDF(PDDocument documento, PDPage pagina, String[] lineasPrestamo){
 //Por cada linea del arreglo, se irá agregando texto
         try (PDPageContentStream contenidoPagina = new PDPageContentStream(documento, pagina)) {
-            for(int linea=0; linea<lineasVenta.length; linea++) {
+            for(int linea=0; linea<lineasPrestamo.length; linea++) {
                 contenidoPagina.beginText();
 //Se define en que posición del documento estará el texto
                 contenidoPagina.newLineAtOffset(10, pagina.getMediaBox().getHeight()-(10*linea));
                 contenidoPagina.setFont(PDType1Font.HELVETICA_BOLD, 8f);
 //Agrega el texto al documento
-                contenidoPagina.showText(lineasVenta[linea]);
+                contenidoPagina.showText(lineasPrestamo[linea]);
                 contenidoPagina.endText();
             }
         } catch (IOException e) {
@@ -41,7 +40,7 @@ public class GestorPDF {
     public String[] obtenerLíneasPdf(Prestamo prestamo){
         String[] lineasPdf= new String[9];
         lineasPdf[0]="Prestamo Libros";
-        lineasPdf[1]="Biblioteca ";
+        lineasPdf[1]="Biblioteca";
         lineasPdf[2]="Fecha Inicio: "+prestamo.getFechaInicio().toString();
         lineasPdf[3]="Fecha Termino: "+prestamo.getFechaTermino().toString();
         lineasPdf[4]=prestamo.getUsuario().toString();
@@ -51,9 +50,9 @@ public class GestorPDF {
         lineasPdf[8]="Bibliotecario: "+prestamo.getBibliotecario().getNombre();
         return lineasPdf;
     }
-    private String generarNombrePdf(Date fecha){
-        System.out.println(fecha.toString());
-        String fechaArchivo= fecha.toString();
+    private String generarNombrePdf(Date fechaInicio){
+        System.out.println(fechaInicio().toString());
+        String fechaArchivo= fechaInicio().toString();
         fechaArchivo=fechaArchivo.replace(" ","").replace(":","");
         String nombreArchivo="target/"+"prestamo"+fechaArchivo+".pdf";
         return nombreArchivo;
