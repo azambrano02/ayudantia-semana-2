@@ -54,7 +54,7 @@ public class GestorPDF {
         System.out.println(fecha.toString());
         String fechaArchivo= fecha.toString();
         fechaArchivo=fechaArchivo.replace(" ","").replace(":","");
-        String nombreArchivo="target/"+"boleta"+fechaArchivo+".pdf";
+        String nombreArchivo="target/"+"prestamo"+fechaArchivo+".pdf";
         return nombreArchivo;
     }
 }
