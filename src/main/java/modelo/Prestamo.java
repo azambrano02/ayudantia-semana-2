@@ -49,4 +49,8 @@ public class Prestamo {
     public Date getFechaTermino(){
         return fechaTermino;
     }
+
+    public String toString() {
+        return  libro.getNombre();
+    }
 }

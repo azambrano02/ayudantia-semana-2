@@ -36,7 +36,7 @@ public class Libro {
     public String getISBN() { return ISBN;}
 
     public String toString() {
-        return  nombre+autor+editorial+ISBN;
+        return  "Nombre: " +nombre+ "\nAutor: "+ autor + "\nEditorial: " + editorial +"\nISBN: "+ISBN;
     }
 
 }

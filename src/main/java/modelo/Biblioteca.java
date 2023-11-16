@@ -53,6 +53,43 @@ public class Biblioteca {
     public List<Usuario> getUsuarios() {return usuarios; }
     public List<Bibliotecario> getBibliotecarios() { return bibliotecarios; }
 
+
+    public boolean agregarUsuario(Usuario usuario) {
+        if (!usuarioExiste(usuario)) {
+            this.usuarios.add(usuario);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean usuarioExiste(Usuario usuario){
+        for(Usuario u : this.usuarios) {
+            if(usuario.getRut().equals(u.getRut())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean agregarEmpleado(Bibliotecario bibliotecario) {
+        if (!empleadoExiste(bibliotecario)) {
+            this.bibliotecarios.add(bibliotecario);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean empleadoExiste(Bibliotecario empleado){
+        for(Bibliotecario b : this.bibliotecarios) {
+            if(empleado.getId().equals(b.getId())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
     public boolean agregarLibro(Libro libro) {
         if (!libroExiste(libro)) {
             this.libros.add(libro);
@@ -103,6 +140,33 @@ public class Biblioteca {
         Prestamo nuevoPrestamo = new Prestamo(bibliotecario, usuario, libro, fechaInicio, fechaTermino);
         prestamos.add(nuevoPrestamo);
     }
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Nombre de la Biblioteca: ").append(nombreBiblioteca).append("\n");
+        stringBuilder.append("Dirección: ").append(direccion).append("\n");
+
+        stringBuilder.append("Libros en la Biblioteca:\n");
+        for (Libro libro : libros) {
+            stringBuilder.append(libro.getNombre()).append("\n");
+        }
+
+        stringBuilder.append("Préstamos en la Biblioteca:\n");
+        for (Prestamo prestamo : prestamos) {
+            stringBuilder.append(prestamo.toString()).append("\n");
+        }
+
+        stringBuilder.append("Usuarios en la Biblioteca:\n");
+        for (Usuario usuario : usuarios) {
+            stringBuilder.append(usuario.getNombre()).append("\n");
+        }
+
+        stringBuilder.append("Bibliotecarios en la Biblioteca:\n");
+        for (Bibliotecario bibliotecario : bibliotecarios) {
+            stringBuilder.append(bibliotecario.getNombre()).append("\n");
+        }
+        return stringBuilder.toString();
+    }
 }
+
 
 

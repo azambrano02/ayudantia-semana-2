@@ -32,7 +32,7 @@ public class Usuario {
     }
 
     public String toString() {
-        return  nombre+rut+numeroTelefonico;
+        return  "Nombre: "+nombre+ "\nRut: "+ rut + "\nNumero de Telefono: " + numeroTelefonico;
     }
 
 }

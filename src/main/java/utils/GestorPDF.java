@@ -50,11 +50,11 @@ public class GestorPDF {
         lineasPdf[8]="Bibliotecario: "+prestamo.getBibliotecario().getNombre();
         return lineasPdf;
     }
-    private String generarNombrePdf(Date fechaInicio){
-        System.out.println(fechaInicio().toString());
-        String fechaArchivo= fechaInicio().toString();
+    private String generarNombrePdf(Date fecha){
+        System.out.println(fecha.toString());
+        String fechaArchivo= fecha.toString();
         fechaArchivo=fechaArchivo.replace(" ","").replace(":","");
-        String nombreArchivo="target/"+"prestamo"+fechaArchivo+".pdf";
+        String nombreArchivo="target/"+"boleta"+fechaArchivo+".pdf";
         return nombreArchivo;
     }
 }
