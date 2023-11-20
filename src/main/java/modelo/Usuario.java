@@ -17,4 +17,7 @@ public class Usuario extends Persona {
     public String toString() {
         return  nombre+rut+direccion+numeroTelefonico;
     }
+    public String getTipo() {
+        return "Usuario";
+    }
 }

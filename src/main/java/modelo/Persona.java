@@ -30,4 +30,5 @@ public abstract class Persona {
         this.rut = rut;
         this.direccion = direccion;
     }
+    public abstract String getTipo();
 }

@@ -16,4 +16,8 @@ public class Bibliotecario extends Persona{
     public String toString() {
         return  nombre+rut+direccion+id;
     }
+
+    public String getTipo() {
+        return "Buibliotecario";
+    }
 }
