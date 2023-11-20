@@ -5,6 +5,7 @@ public abstract class Persona {
     protected String rut;
     protected String direccion;
 
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
