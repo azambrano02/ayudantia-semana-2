@@ -12,6 +12,9 @@ public enum Especialidad {
         this.especialidad = especialidad;
     }
 
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
     public String getEspecialidad(){
         return especialidad;
     }

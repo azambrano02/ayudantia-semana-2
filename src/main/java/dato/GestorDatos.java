@@ -33,7 +33,7 @@ public class GestorDatos {
             while((textoArchivo = br.readLine()) != null){
                 String[] data = textoArchivo.split(",");
                 biblioteca.getUsuarios().add(new Usuario
-                        (data[0], data[1], data[2]));
+                        (data[0], data[1], data[2],data[3]));
             }
         } catch (Exception e){
             System.out.println("Documento no disponible, favor contactar con administrador");
