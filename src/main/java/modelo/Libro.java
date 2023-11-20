@@ -42,6 +42,7 @@ public class Libro {
     public Especialidad getEspecialidad() {
         return this.especialidad;}
 
+
     public String toString() {
         return  nombre+autor+editorial+ISBN+especialidad;
     }
